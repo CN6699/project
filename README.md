@@ -1,57 +1,61 @@
-# React + TypeScript + Vite
+# Hello AI 科技致善 SOLO 教学助手
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+这是一个为乡村教师打造的零门槛全科教学助手，提供以下核心功能：
 
-Currently, two official plugins are available:
+- **教案课件生成**：根据年级、学科和课时内容生成详细的教案和PPT大纲
+- **作业批改**：自动批改学生作业并提供详细的错误分析和改进建议
+- **学情分析**：分析班级学生的学习情况，生成详细的分析报告和教学建议
+- **课堂互动设计**：根据知识点生成分层教学方案和互动游戏
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 技术栈
 
-## Expanding the ESLint configuration
+- **前端**：React 18 + TypeScript + Tailwind CSS + Vite
+- **后端**：Express 4 + TypeScript
+- **API设计**：RESTful API
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 项目结构
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- `src/`：前端代码
+- `api/`：后端代码
+- `dist/`：前端构建输出
+
+## 快速开始
+
+### 安装依赖
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 启动开发服务器
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  extends: [
-    // other configs...
-    // Enable lint rules for React
-    reactX.configs['recommended-typescript'],
-    // Enable lint rules for React DOM
-    reactDom.configs.recommended,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm run dev
 ```
+
+### 构建项目
+
+```bash
+npm run build
+```
+
+### 启动后端服务器
+
+```bash
+npm run server:dev
+```
+
+## API 端点
+
+- `POST /api/lesson-plan`：生成教案
+- `POST /api/homework-grade`：批改作业
+- `POST /api/learning-analysis`：分析学情
+- `POST /api/classroom-interaction`：生成课堂互动方案
+- `POST /api/auth/register`：用户注册
+- `POST /api/auth/login`：用户登录
+- `POST /api/auth/logout`：用户登出
+- `GET /api/health`：健康检查
+
+## 贡献
+
+欢迎贡献代码和提出建议！
